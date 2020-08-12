@@ -1,0 +1,20 @@
+
+<div class="container mx-auto">
+  <h1 class=text-center>List of restaurants</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant|%>
+    <div class="col-auto m-4">
+      <div class="card border border-light rounded" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Name: <strong><%= restaurant.name %></strong></h5>
+          <p class="card-text">Address: <strong><%= restaurant.address %></strong></p>
+          <p class="card-text">Phone: <%= restaurant.phone_number %></p>
+          <p class="card-text">Category: <%= restaurant.category %></p>
+          <p class="card-text">Reviews: </p>
+        </div>
+        <%= link_to "See details", restaurant, class: "btn btn-primary"%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
